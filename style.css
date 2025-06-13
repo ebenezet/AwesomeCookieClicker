@@ -1,6 +1,8 @@
 body {
     margin:0px;
     box-sizing: border-box;
+
+    
 }
 
 main {
@@ -8,8 +10,7 @@ main {
     flex-direction: row;
     flex-wrap: column;
     justify-content: space-evenly;
-   
-
+      background-image:url(https://www.woodchipandmagnolia.co.uk/cdn/shop/products/WM-414-03-MATCHSTICKSTRIPE-BLUSHPINK-02_1080x.jpg?v=1689072442)
 }
 
 .left {
@@ -18,10 +19,13 @@ main {
     align-items:center ;
     align-content:center;
     width:400px;
-    height:80vh;
-    border: 1.5px solid tomato;
+    height:78vh;
+    border: 2.5px solid grey;
+    border-radius: 20px;
     gap:150px;
     text-transform:uppercase;
+   
+
 
 } 
 
@@ -31,11 +35,13 @@ main {
     align-items:center ;
     align-content:center;
     width:600px;
-    height:80vh;
-    border: 1.5px solid tomato;
+    height:78vh;
+    border: 2.5px solid grey;
+    border-radius: 20px;
     gap:20px;
     text-transform:uppercase;
     font-size: 25px;
+    
 
 } 
 
@@ -45,8 +51,9 @@ main {
     align-items:center ;
     align-content:center;
     width:400px;
-    height:80vh;
-    border: 1.5px solid tomato;
+    height:78vh;
+    border: 2.5px solid grey;
+    border-radius: 20px;
     gap:20px;
     text-transform:uppercase;
 }
@@ -57,3 +64,83 @@ main {
     gap:20px;
 }
 
+
+header {
+    display:flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: flex-start;
+    background-color: rgba(224, 222, 222, 0.938);
+   
+    
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    gap:2rem;
+    margin:22px;
+    font-size:small;
+}
+
+footer {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(224, 222, 222, 0.938);
+}
+
+.name{
+    background-color: greenyellow;
+    
+    
+}
+
+.name:hover{
+    background-color: rgba(0, 0, 255, 0.911);
+    color: whitesmoke;
+}
+
+.cost{
+    background-color: yellow;
+}
+
+.cost:hover{
+    background-color: magenta;
+    color: whitesmoke;
+}
+
+.named{
+    background-color: tomato;
+}
+
+
+.named:hover{
+    background-color: blueviolet;
+    color: whitesmoke;
+}
+
+
+.brand{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    font-size: 23px;
+   
+}
+
+.click {
+    
+    height: 300px;
+    width:300px;
+    border-radius: 160px;
+    background-image: url(./images/cookie-choco.png);
+    background-size:cover;
+}
+
+.cookie {
+    display: flex;
+    position: absolute;
+   
+}

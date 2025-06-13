@@ -1,45 +1,54 @@
 console.log("Hi Friend, Welcome")
 
 const numberDisplay = document.getElementById("display")
-
 const button = document.getElementById("click")
 
+const rate = document.getElementById("rate")
+const persecond = document.getElementById("persecond")
+
 let counter = 0
+let workForce = 0
+let superCounter = 1
+let timeStart = false
+let index = 0
 
-  numberDisplay.innerText = counter 
 
+  //let counter = localStorage.getItem('counter') || 0
+   //localStorage.setItem('counter', counter)
 
+function cookiesFromClick(){
 
-button.addEventListener('click', () => {
-
-   // let counter = localStorage.getItem('counter') || 0
-   // localStorage.setItem('counter', counter)
-    
-    counter = counter + 2
+    counter = counter + 1
     numberDisplay.innerText = counter
-    console.log("total cookies from a click")
-    
-   
-})
+    console.log("a cookies per click")
+}
 
+button.addEventListener('click', cookiesFromClick)
 
+function baking(){
+    counter = counter + (workForce*superCounter)
+    numberDisplay.innerText = counter
+    console.log("baking needed for a cookie")
+}
 
-//cookies = cookiesFromClick + CookiesFromTime
-
-
-//timer increasing number of cookies by 1
-//const timePower = document.createElement("h1")
-//timePower.innerHTML = setInterval(()=> { console.log( counter +=); }, 500) 
-//medium.appendChild(timePower)
-
+function cookiesFromTime(){
   
+    workForce = workForce + 1
+    if(timeStart == false) {
+      timeStart = true
+     setInterval(()=> { baking() }, 1000)}
+   
+    rate.innerText = workForce
+    console.log("how time produces a cookie")
+     
+}
 
-//const cookiesFromClick = document.createElement("h3")
- // cookiesFromClick.innerText = counter
-//medium.append(cookiesFromClick)
+persecond.addEventListener('click', cookiesFromTime)
+
 
 //the upgrades are taken from API : https://cookie-upgrade-api.vercel.app/api/upgrades
 
+//fetching the data from the API link
 async function fetchData(){
   const response = await fetch(`https://cookie-upgrade-api.vercel.app/api/upgrades`)
   const rawData = await response.json()
@@ -52,6 +61,8 @@ async function fetchData(){
 
 fetchData()
 
+//linking up sections of my html file with new elements
+
 const low = document.getElementById("low")
 const easy = document.getElementById("easy")
 const moderate = document.getElementById("moderate")
@@ -59,89 +70,77 @@ const medium = document.getElementById("medium")
 const difficult = document.getElementById("difficult")
 
 
+//extracting information about the different upgrades and displaying in on the document
+//via createElement() and appendChild()
 
-async function oneUpgrade(){
+async function theDeals(){
    const upgrades = await fetchData()
-   const lowUpgrades = upgrades.slice(0,3)
-   
-   console.log(lowUpgrades)
    console.log(upgrades)
 
-
-
-
-   lowUpgrades.forEach((lowUpgrade)=> {
-     const div = document.createElement("div")
-     const nameUpgrade = document.createElement("button")
-     const costUpgrade = document.createElement("button")
-     const increaseUpgrade = document.createElement("button")
+ upgrades.forEach((upgrade)=> {
+     let div = document.createElement("div")
+     let nameUpgrade = document.createElement("button")
+     let costUpgrade = document.createElement("button")
+     let increaseUpgrade = document.createElement("button")
      
-     nameUpgrade.innerText = lowUpgrade.name
-     costUpgrade.innerText = lowUpgrade.cost
-     increaseUpgrade.innerText = lowUpgrade.increase
+     nameUpgrade.innerText = upgrade.name
+     costUpgrade.innerText = upgrade.cost
+     increaseUpgrade.innerText = upgrade.increase
+
      
      nameUpgrade.className = 'name'
      costUpgrade.className = 'cost'
      increaseUpgrade.className = 'increase'
 
-
-
-
-     console.log(nameUpgrade, costUpgrade, increaseUpgrade)
-     div.append(nameUpgrade)
-    easy.appendChild(div)
-   }
-   )
-
-   const medUpgrades = upgrades.slice(3, 7)
-   console.log(medUpgrades)
+     upgradingCookie(upgrade)
    
-  medUpgrades.forEach((medUpgrade)=> {
-     const div = document.createElement("div")
-     const nameUpgrade = document.createElement("button")
-     const costUpgrade = document.createElement("button")
-     const increaseUpgrade = document.createElement("button")
-     
-     nameUpgrade.innerText = medUpgrade.name
-     costUpgrade.innerText = medUpgrade.cost
-     increaseUpgrade.innerText = medUpgrade.increase
-     
-     nameUpgrade.className = 'name'
-     costUpgrade.className = 'cost'
-     increaseUpgrade.className = 'increase'
-
-     console.log(nameUpgrade, costUpgrade, increaseUpgrade)
-     div.append(nameUpgrade)
-    moderate.appendChild(div)
-  }
-  )
+    costUpgrade.addEventListener('click', ()=>{
+      index +=1
+      if (upgradeIndex = 0) (counter = costUpgrade[index])
+    })
 
 
-  const highUpgrades = upgrades.slice(7,11)
-  console.log(highUpgrades)
 
-  highUpgrades.forEach((highUpgrade)=> {
-     const div = document.createElement("div")
-     const nameUpgrade = document.createElement("button")
-     const costUpgrade = document.createElement("buttn")
-     const increaseUpgrade = document.createElement("button")
-     
-     nameUpgrade.innerText = highUpgrade.name
-     costUpgrade.innerText = highUpgrade.cost
-     increaseUpgrade.innerText = highUpgrade.increase
-     
-     nameUpgrade.className = 'name'
-     costUpgrade.className = 'cost'
-     increaseUpgrade.className = 'increase'
 
-     console.log(nameUpgrade, costUpgrade, increaseUpgrade)
-     div.append(nameUpgrade)
-    right.appendChild(div)
-  }
-  )
+
+
+  console.log(nameUpgrade, costUpgrade, increaseUpgrade)
+  div.append(nameUpgrade, costUpgrade, costt)
+  easy.appendChild(div)
+   
+
+
+
+
+
+
+
+   
+} )
+
 }
 
+theDeals()
+ 
 
-oneUpgrade()
 
+
+
+
+// create a pop-up message which explains cost and new abilities
+
+
+ 
+    // const boxText = document.getElementById("boxText")
+    // const popUpText = document.createElement("p")
+
+    // popUpText.innerText = "It will cost you 500$. A click is now worth 10 cookies"
+    // popUpText.className = "popUp"
+    // popUpText.addEventListener('click', ()=>{
+    //   console.log(event)
+    // })
+
+    // boxText.appendChild(popUpText)
+
+ 
 
