@@ -95,36 +95,36 @@ async function theDeals(){
      increaseUpgrade.className = 'increase'
 
   
+    costUpgrade.addEventListener('click', () =>{
+    let threshold = upgrade.cost
+    let warning = document.createElement("p")
+    let approved = document.createElement("p")
+    let rightbox = document.getElementById("right")
    
-    nameUpgrade.addEventListener('click', ()=>{
-      index +=1
-      if ((counter - costUpgrade[index])< 0){
-        counter = counter 
-        alert("You do not have enough cookies")}
-      else {counter = counter - costUpgrade[index]
-            alert("the upgrade was successdul")
-      }
-    })
+    
+    warning.innerText = 'You unfortunately can not upgrade.You need to wait.'
+    approved.innerText = "The upgrade was successful"
+    if(counter < threshold) {
+      counter = counter 
+      rightbox.appendChild(warning)}
+        else {
+          counter = counter - threshold
+          rightbox.appendChild(approved)}
+
+        })
+ 
+    
 
 
-
-
+    console.log(upgrades.length)
 
 
   console.log(nameUpgrade, costUpgrade, increaseUpgrade)
   div.append(nameUpgrade, costUpgrade)
   easy.appendChild(div)
    
-
-
-
-
-
-
-
    
-} )
-
+})
 }
 
 theDeals()
