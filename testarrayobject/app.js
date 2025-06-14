@@ -40,9 +40,9 @@ const amis = document.getElementById("friends")
  Friends.forEach((Friend)=> {
  let div = document.createElement("div")
  let popup = document.getElementById("popup")
-     let namee = document.createElement("button")
-     let costage = document.createElement("button")
-     let increaseheight = document.createElement("button")
+     const namee = document.createElement("button")
+     const costage = document.createElement("button")
+     const increaseheight = document.createElement("button")
      
      namee.innerText = Friend.name
      costage.innerText = Friend.age
@@ -63,7 +63,7 @@ const amis = document.getElementById("friends")
 
 
  namee.addEventListener('click', ()=> {
-    let message = document.createElement("p")
+    const message = document.createElement("p")
     
     message.innerText = Friend.name
     console.log(message)
@@ -73,16 +73,29 @@ const amis = document.getElementById("friends")
 
  costage.addEventListener('click', () =>{
     let driveAge = 18
-    let warning = document.createElement("p")
-    let approved = document.createElement("p")
-    let diff = 18 - Friend.age
     
-    warning.innerText = 'You can not drive.You need to wait.'
+    const approved = document.createElement("p")
+    const diff = 18 - Friend.age
+    
+    
     approved.innerText = "You can drive"
-    if(Friend.age < driveAge) {setTimeout(popup.appendChild(warning), 3000)}
+    if(Friend.age < driveAge) {setTimeout(()=> {
+      
+      const warning = document.createElement("p")
+      warning.innerText = 'You can not drive.You need to wait.'
+   
+       popup.appendChild(warning)
+      
+    , 3000})}
         else {popup.appendChild(approved)}
 
         })
 
  })
 
+setTimeout(()=> {
+      
+      const warning = document.getElementById("disappear")
+      warning.style.display = 'none'
+      
+    , 0})

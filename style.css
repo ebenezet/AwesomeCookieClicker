@@ -41,7 +41,8 @@ main {
     border-radius: 20px;
  
     text-transform:uppercase;
-    font-size: 25px;
+    font-size: 28px;
+    font-weight: bold;
     
 
 } 
@@ -56,7 +57,7 @@ main {
     border: 2.5px solid grey;
     border-radius: 20px;
     gap:20px;
-    text-transform:uppercase;
+   
 }
  
 .upgrade {
@@ -94,6 +95,8 @@ footer {
 
 .name{
     background-color: greenyellow;
+    text-transform: uppercase;
+    font-size: small;
     
     
 }
@@ -105,6 +108,8 @@ footer {
 
 .cost{
     background-color: yellow;
+    text-transform: uppercase;
+    font-size: small;
 }
 
 .cost:hover{
@@ -135,7 +140,7 @@ footer {
    
 }
 
-@keyframes rotates {
+/* @keyframes rotates {
     from {transform: rotate(0)}
     to {transform: rotate(360deg)}
-}
+} */
