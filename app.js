@@ -1,12 +1,13 @@
 console.log("Hi Friend, Welcome")
 
 const numberDisplay = document.getElementById("display")
-const button = document.getElementById("click")
+const img = document.getElementById("click")
 
 const rate = document.getElementById("rate")
 const persecond = document.getElementById("persecond")
 
-let counter = 0
+let counter =  0
+
 let workForce = 0
 let superCounter = 1
 let timeStart = false
@@ -21,9 +22,10 @@ function cookiesFromClick(){
     counter = counter + 1
     numberDisplay.innerText = counter
     console.log("a cookies per click")
+    
 }
 
-button.addEventListener('click', cookiesFromClick)
+img.addEventListener('click', cookiesFromClick)
 
 function baking(){
     counter = counter + (workForce*superCounter)
@@ -92,11 +94,16 @@ async function theDeals(){
      costUpgrade.className = 'cost'
      increaseUpgrade.className = 'increase'
 
-     upgradingCookie(upgrade)
+  
    
-    costUpgrade.addEventListener('click', ()=>{
+    nameUpgrade.addEventListener('click', ()=>{
       index +=1
-      if (upgradeIndex = 0) (counter = costUpgrade[index])
+      if ((counter - costUpgrade[index])< 0){
+        counter = counter 
+        alert("You do not have enough cookies")}
+      else {counter = counter - costUpgrade[index]
+            alert("the upgrade was successdul")
+      }
     })
 
 
@@ -105,7 +112,7 @@ async function theDeals(){
 
 
   console.log(nameUpgrade, costUpgrade, increaseUpgrade)
-  div.append(nameUpgrade, costUpgrade, costt)
+  div.append(nameUpgrade, costUpgrade)
   easy.appendChild(div)
    
 
