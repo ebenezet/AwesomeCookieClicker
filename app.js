@@ -1,12 +1,12 @@
 console.log("Hi Friend, Welcome");
 
-const numberDisplay = document.getElementById("display");
-const img = document.getElementById("click");
+const numberDisplay = document.getElementById("numberDisplay");
+const img = document.getElementById("cookie");
 
 const rate = document.getElementById("rate");
 const persecond = document.getElementById("persecond");
 
-let counter = 0;
+let counter = Number(localStorage.getItem("counter")) || 0;
 
 let workForce = 0;
 let superCounter = 1;
@@ -14,16 +14,13 @@ let timeStart = false;
 let index = 0;
 let upgradeCounter = 0;
 
-//let counter = localStorage.getItem('counter') || 0
-//localStorage.setItem('counter', counter)
-
 function cookiesFromClick() {
   if (upgradeCounter == 0) {
     counter += 1;
   } else {
     counter += upgradeCounter;
   }
-  // counter += 1;
+  localStorage.setItem("counter", counter);
   numberDisplay.innerText = counter;
   console.log("a cookies per click");
 }
@@ -32,6 +29,7 @@ img.addEventListener("click", cookiesFromClick);
 
 function baking() {
   counter = counter + workForce * superCounter;
+  localStorage.setItem("counter", counter);
   numberDisplay.innerText = counter;
   console.log("baking needed for a cookie");
 }
@@ -69,11 +67,8 @@ fetchData();
 
 //linking up sections of my html file with new elements
 
-const low = document.getElementById("low");
-const easy = document.getElementById("easy");
-const moderate = document.getElementById("moderate");
-const medium = document.getElementById("medium");
-const difficult = document.getElementById("difficult");
+const leftSection = document.getElementById("leftSection");
+const popupmessages = document.getElementById("popupmessages");
 
 //extracting information about the different upgrades and displaying in on the document
 //via createElement() and appendChild()
@@ -96,42 +91,31 @@ async function theDeals() {
     costUpgrade.className = "cost";
     increaseUpgrade.className = "increase";
 
+    console.log(nameUpgrade, costUpgrade, increaseUpgrade);
+    div.append(nameUpgrade, costUpgrade, increaseUpgrade);
+    leftSection.appendChild(div);
+
     costUpgrade.addEventListener("click", () => {
+      popupmessages.innerHTML = ""; // Clear previous content
       const threshold = upgrade.cost;
       const warning = document.createElement("p");
-      const approved = document.createElement("p");
-      const rightbox = document.getElementById("right");
+      const upgradeIsSuccessful = document.createElement("p");
 
       warning.innerText = "You unfortunately can not upgrade.You need to wait.";
-      approved.innerText = "The upgrade was successful";
+      warning.className = "warning";
+      upgradeIsSuccessful.innerText = "The upgrade was successful";
+      upgradeIsSuccessful.className = "approved";
+
       if (counter < threshold) {
-        rightbox.appendChild(warning);
+        popupmessages.appendChild(warning);
       } else {
         counter = counter - threshold;
         upgradeCounter += upgrade.increase;
-        rightbox.appendChild(approved);
+        localStorage.setItem("counter", counter);
+        popupmessages.appendChild(upgradeIsSuccessful);
       }
     });
-
-    console.log(upgrades.length);
-
-    console.log(nameUpgrade, costUpgrade, increaseUpgrade);
-    div.append(nameUpgrade, costUpgrade, increaseUpgrade);
-    easy.appendChild(div);
   });
 }
 
 theDeals();
-
-// create a pop-up message which explains cost and new abilities
-
-// const boxText = document.getElementById("boxText")
-// const popUpText = document.createElement("p")
-
-// popUpText.innerText = "It will cost you 500$. A click is now worth 10 cookies"
-// popUpText.className = "popUp"
-// popUpText.addEventListener('click', ()=>{
-//   console.log(event)
-// })
-
-// boxText.appendChild(popUpText)
