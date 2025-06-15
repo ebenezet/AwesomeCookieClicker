@@ -22,9 +22,9 @@ main {
     flex-direction: column;
     align-items:center ;
     align-content:center;
-    width:425px;
+    width:445px;
     height:85vh;
-    border: 2.5px solid grey;
+    border: 3px solid grey;
     border-radius: 20px;
     gap:20px;
     text-transform:uppercase;
@@ -41,7 +41,7 @@ main {
     align-content:center;
     width:600px;
     height:85vh;
-    border: 2.5px solid grey;
+    border: 3px solid grey;
     border-radius: 20px;
  
     text-transform:uppercase;
@@ -56,9 +56,9 @@ main {
     flex-direction: column;
     align-items:center ;
     align-content:center;
-    width:425px;
+    width:445px;
     height:85vh;
-    border: 2.5px solid grey;
+    border: 3px solid grey;
     border-radius: 20px;
     gap:20px;
    
@@ -99,7 +99,7 @@ header {
     flex-direction: row;
     justify-content:flex-start;
     align-items: flex-start;
-    background-color: rgba(224, 222, 222, 0.938);
+    background-color: salmon;
    
     
 }
@@ -117,7 +117,7 @@ footer {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
-    background-color: rgba(224, 222, 222, 0.938);
+    background-color: salmon;
 }
 
 .name{
@@ -156,10 +156,21 @@ footer {
     height: 33px;
 }
 
+.increase:hover{
+    background-color: black;
+    color: whitesmoke;
+}
+
+
+
+
 .gridwrapper {
   display: grid;
   grid-template-columns: repeat(3, 10fr);
   gap: 10px;
+  justify-items: center;
+  align-items: center;
+  justify-content: center;
 }
 
 .brand{
@@ -183,13 +194,45 @@ footer {
     animation: rotates 100s linear infinite;
     cursor: pointer;
     background-blend-mode: color;
-    height: 320px;
-    width: 320px
+    height: 310px;
+    width: 310px;
+    margin-right:auto ;
+    
 
 }
 
 @keyframes rotates {
     from {transform: rotate(0)}
     to {transform: rotate(360deg)}
-} 
+}
 
+.warning {
+ text-decoration: double;
+ color: red;
+ font-size: 26px
+}
+
+.upgradeIsSuccessful {
+ text-decoration: double;
+ color: green;
+ font-size: 26px
+}
+
+.popupmessages{
+    display:flex;
+    border: 2.6px grey solid;
+    width: 350px;
+    height: 250px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.repeatmessages{
+    display:flex;
+    border: 2.6px grey solid;
+    width: 350px;
+    height: 250px;
+    justify-content: center;
+    align-items: center;
+}

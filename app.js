@@ -97,15 +97,15 @@ async function theDeals() {
     leftSection.appendChild(div);
 
     costUpgrade.addEventListener("click", () => {
-      popupmessages.innerHTML = ""; // Clear previous content
+      popupmessages.innerHTML = "";
       const threshold = upgrade.cost;
       const warning = document.createElement("p");
       const upgradeIsSuccessful = document.createElement("p");
 
-      warning.innerText = "You unfortunately can not upgrade.You need to wait.";
+      warning.innerText = `"You unfortunately can not upgrade.You need to wait.You need"`;
       warning.className = "warning";
-      upgradeIsSuccessful.innerText = "The upgrade was successful";
-      upgradeIsSuccessful.className = "approved";
+      upgradeIsSuccessful.innerText = `"The upgrade was successful"`;
+      upgradeIsSuccessful.className = "upgradeIsSuccessful";
 
       if (counter < threshold) {
         popupmessages.appendChild(warning);
@@ -120,3 +120,27 @@ async function theDeals() {
 }
 
 theDeals();
+
+const messages = [
+  "One cookie a day keeps the doctor away _by Enhanced Oven",
+  "Keep clicking those cookies _by Cookie Farm ",
+  "You are a cookie master _by Robot Baker",
+  "Cookies are life _by Cookie Factory",
+  "Click, click, click! _by Autoclicker",
+  "Cookie power! _by Magic Flour",
+  "Cookies, Past, Present, and Future _by Time Machine",
+  "Cookies or not cookies? _by Quantum Oven",
+  "jfjfjnefjnefjnefejnfje _by Alien Technology",
+];
+
+// Display a message every 3 minutes//
+setInterval(() => {
+  for (let i = 0; i < messages.length - 1; i++) {
+    const div = document.getElementById("repeatmessages");
+    const message = document.createElement("p");
+    div.innerHTML = "";
+    message.innerText = messages[i];
+    div.appendChild(message);
+    console.log(message);
+  }
+}, 180000);
