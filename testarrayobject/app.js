@@ -94,15 +94,23 @@ const messages = [
   "You need to be at least 18 years old to drive",
 ];
 
-for (let i = 0; i < messages.length - 1; i++) {
-  const div = document.getElementById("messages");
+const messa = document.getElementById("messages");
   const message = document.createElement("p");
   div.innerHTML = "";
   message.innerText = messages[i];
-  div.appendChild(
-    setInterval(() => {
+  for (let i = 0; i < messages.length - 1; i++) {}
+   
+  
+  setInterval(() => {
       messages[i];
     }, 180000)
-  );
+  
   console.log(message);
+
+
+
+function message() {
 }
+}
+
+setInterval(message, 5000)
