@@ -1,6 +1,6 @@
 console.log("Hi Friend");
 
-let Friends = [
+const Friends = [
   { name: "QuickFox", age: 15, height: 158 },
   { name: "CraftyBear", age: 32, height: 162 },
   {
@@ -32,6 +32,7 @@ Friends.forEach((Friend) => {
   namee.innerText = Friend.name;
   costage.innerText = Friend.age;
   increaseheight.innerText = Friend.height;
+  div.className = "gridwrapper";
 
   namee.className = "name";
   costage.className = "cost";
@@ -76,3 +77,9 @@ setTimeout(() => {
 });
 
 // background-image:url(https://www.woodchipandmagnolia.co.uk/cdn/shop/products/WM-414-03-MATCHSTICKSTRIPE-BLUSHPINK-02_1080x.jpg?v=1689072442)
+const div = document.createElement("div");
+const NewFriend = document.createElement("p");
+const addition = { name: "Name", age: "Age", height: "Height" };
+const FriendsAndNewFriend = Friends.unshift(addition);
+
+console.log(FriendsAndNewFriend);

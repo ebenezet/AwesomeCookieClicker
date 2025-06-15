@@ -83,6 +83,7 @@ async function theDeals() {
     const costUpgrade = document.createElement("button");
     const increaseUpgrade = document.createElement("button");
 
+    div.className = "gridwrapper";
     nameUpgrade.innerText = upgrade.name;
     costUpgrade.innerText = upgrade.cost;
     increaseUpgrade.innerText = upgrade.increase;

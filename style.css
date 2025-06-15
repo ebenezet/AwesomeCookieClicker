@@ -22,7 +22,7 @@ main {
     flex-direction: column;
     align-items:center ;
     align-content:center;
-    width:400px;
+    width:425px;
     height:85vh;
     border: 2.5px solid grey;
     border-radius: 20px;
@@ -56,7 +56,7 @@ main {
     flex-direction: column;
     align-items:center ;
     align-content:center;
-    width:400px;
+    width:425px;
     height:85vh;
     border: 2.5px solid grey;
     border-radius: 20px;
@@ -124,6 +124,8 @@ footer {
     background-color: greenyellow;
     text-transform: uppercase;
     font-size: small;
+    width:139px;
+    height: 33px;
     
     
 }
@@ -137,6 +139,8 @@ footer {
     background-color: yellow;
     text-transform: uppercase;
     font-size: small;
+     width:129px;
+    height: 33px;
 }
 
 .cost:hover{
@@ -144,6 +148,19 @@ footer {
     color: whitesmoke;
 }
 
+.increase{
+    background-color: whitesmoke;
+    text-transform: uppercase;
+    font-size: small;
+     width:89px;
+    height: 33px;
+}
+
+.gridwrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 10fr);
+  gap: 10px;
+}
 
 .brand{
     display:flex;
@@ -155,12 +172,14 @@ footer {
 
 .cookie-container{
     height: 350px;
+    display: flex;;
+   
 }
  
 
 .cookie {
     display: flex;
-    
+    position: absolute;
     animation: rotates 100s linear infinite;
     cursor: pointer;
     background-blend-mode: color;
@@ -173,3 +192,4 @@ footer {
     from {transform: rotate(0)}
     to {transform: rotate(360deg)}
 } 
+

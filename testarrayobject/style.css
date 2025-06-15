@@ -1,0 +1,5 @@
+.gridwrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 7fr);
+  gap: 10px;
+}
